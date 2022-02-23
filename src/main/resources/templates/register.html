@@ -8,10 +8,16 @@
     <style>
 
                body{
-         margin: 0;
-         padding: 0;
          background: #f1f1f1;
-         font-family: 'Arial';
+         background-image: url('images/background.jpg');
+         min-height: 100px;
+         /* Center and scale the image nicely */
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: cover;
+         height:100%;
+         /* Needed to position the navbar */
+         position: relative;
       }
 
 
@@ -21,6 +27,8 @@
     text-align: center;
     overflow: hidden;
     height: 35%;
+    object-fit:cover;
+    object-position:50% 50%;
 <!--    padding: 5px;-->
 <!--    padding-left: 30px;-->
     background-color: 	rgb(15, 11, 11);
@@ -30,6 +38,7 @@
     width: 100%;
 }
 .img{
+
     height: 250px;
     width: 100%;
     position: relative;
@@ -119,7 +128,6 @@
   </style>
     <title>Registration Page</title>
 </head>
-<body>
 <header>
 
     <div class="imgw">
@@ -127,6 +135,8 @@
     </div>
 
 </header>
+<body>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">

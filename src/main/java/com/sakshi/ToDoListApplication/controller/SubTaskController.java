@@ -4,6 +4,7 @@ import com.sakshi.ToDoListApplication.entity.SubTask;
 import com.sakshi.ToDoListApplication.entity.ToDo;
 import com.sakshi.ToDoListApplication.service.SubTaskService;
 import com.sakshi.ToDoListApplication.service.ToDoService;
+import com.sakshi.ToDoListApplication.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +21,9 @@ import java.sql.Date;
 public class SubTaskController {
    @Autowired
     private ToDoService service;
+
+   @Autowired
+   private UserService userService;
 
    @Autowired
     private SubTaskService subTaskService;
@@ -54,6 +58,7 @@ public class SubTaskController {
             String username = principal.getName();
             model.addAttribute("userName", username);
         }
+        model.addAttribute("users",userService.userList());
         model.addAttribute("subTask", subTaskService.getById(id));
         return "updateSubTask";
 
