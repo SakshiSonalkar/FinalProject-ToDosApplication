@@ -89,7 +89,6 @@ public class SubTaskController {
         }
         model.addAttribute("subTask", subTaskService.getById(id));
         return "updateSubTaskStatus";
-
     }
 
     @PostMapping("/updateSubTaskStatus/{id}")

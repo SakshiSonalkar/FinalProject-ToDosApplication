@@ -35,6 +35,7 @@ public class ToDoController {
            String username= principal.getName();
             model.addAttribute("userName",username);
         }
+
         return "/addTask";
     }
 
@@ -52,6 +53,7 @@ public class ToDoController {
         ToDo toDo = new ToDo(taskNumber,taskName,taskStatus,startDate,endDate);
         service.createToDo(toDo);
         model.addAttribute("message","Successfully added!!!");
+        model.addAttribute("users",userService.userList());
         return "addSubTask";
     }
 
@@ -140,6 +142,7 @@ public class ToDoController {
         subTask.setToDo(service.getById(taskNumber));
         subTaskService.saveSubTask(subTask);
         model.addAttribute("message", "Successfully added");
+        model.addAttribute("users",userService.userList());
         return "addSubTask";
     }
 
